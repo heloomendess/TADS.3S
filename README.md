@@ -1,7 +1,7 @@
-## TADS.3S
+# TADS.3S
 Projetos, atividades e provas feitas no terceiro semestre de Analise e Desenvolvimento de Sistemas
 
-# Aulas do Semestre:
+## Disciplinas do Semestre:
 - Usabilidade e Interfaces Humano-Computador
 - Sistemas Moveis Distribuidos
 - Projeto Integrador III (Programação Orientada a Objetos)
