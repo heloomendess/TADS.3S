@@ -1,55 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.aula3;
 
-public class Pessoa {
-
-    //classes
+/**
+ *
+ * @author heloisa.mnbarbosa
+ */
+public class Pessoa extends Object {
+    
     private String nome;
-    private String sobrenome;
     private int idade;
+    private boolean matriculaAtiva = false;
+    private boolean MensalidadePaga = false;
 
-    Pessoa(String nome, String sobrenome, int idade) {
-        System.out.println("Criando pessoa");
-
-        setNome(nome);
-        setSobrenome(sobrenome);
-        setIdade(idade);
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+        System.out.println("Pessoa foi criada com sucesso!!");
     }
-    //get
+    
+    @Override // ele é uma forma de garantir que voce está sobrescrevendo um metodo e nao criando um novo
+    public String toString() { //toString é um padrao para passar informacoes
+        return "Pessoa: " + getNome() + ", " + idade + " anos.";
+    }
+    
+    public void AtivaMatricula() {
+        this.matriculaAtiva = true;
+    }
+    
+    public boolean isMatriculado() {
+        return this.matriculaAtiva;
+    }
+    
+    public boolean isMensalidadePaga() {
+        return this.MensalidadePaga;
+    }
+    
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
-    public String getSobrenome() {
-        return this.sobrenome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getIdade() {
-        return this.idade;
+        return idade;
     }
 
-    //set
-    public void setIdade(int i) {
-        if (i <= 0) {
-            this.idade = 0;
-        } else if (i >= 100) {
-            this.idade = 100;
-        } else {
-            this.idade = i;
-        }
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
-
-    public void setNome(String n) {
-        this.nome = n;
-    }
-
-    public void setSobrenome(String s) {
-        this.sobrenome = s;
-    }
-
-    //dados
-    public void dados() {
-        System.out.println(getNome() + " " +
-                            getSobrenome() + ", " +
-                            getIdade() + " anos de idade");
-    }
-
+    
+    
 }
